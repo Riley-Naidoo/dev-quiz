@@ -1,0 +1,518 @@
+html{
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+.logo{
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+    transition: 1.5s ease;
+}
+
+.off-screen-menu{
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 550px;
+    position: fixed;
+    top: 0;
+    right: -550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+    color: black;
+    z-index: 1;
+}
+
+.off-screen-menu.active{
+    right: 0;
+}
+
+nav{
+    padding: 1rem 1rem 0 1rem ;
+    display: flex;
+    background-color: #000;
+    height: 100px;
+    align-items: center;
+    transition: 1.5s ease;
+    
+    position: fixed;  /* Makes the header fixed relative to the viewport */
+
+    width: 100%;  /* Make it span the full width */
+    z-index: 1000;  /* Ensure it stays above other content */
+}
+
+nav:hover > p.logo {
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    color: black; /* Changes text color on hover */
+}
+nav:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+nav:hover > .ham-menu span{
+    background-color: black;
+}
+
+
+.logo:hover{
+    color: black;
+}
+
+.ham-menu{
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: relative;
+
+}
+
+.ham-menu span{
+    height: 5px;
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    transition: background-color 1.5s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+.ham-menu span:nth-child(1){
+    top: 25%;
+}
+.ham-menu span:nth-child(3){
+    top: 75%;
+}
+
+.ham-menu.active span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: black;
+}
+.ham-menu.active span:nth-child(2){
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+    background-color: black;
+}
+
+.header-list {
+    list-style-type: none; /* Removes the bullets */
+    padding: 0; /* Optional: Removes left padding */
+    margin: 0; /* Optional: Removes top and bottom margin */
+    text-align: left;
+}
+
+.header-list:hover{
+    cursor: pointer;
+}
+
+.straight-line{
+    height: 2px;
+    background-color: gray;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.section-1{
+    width: 100%;
+    background-color: #f1f1f1;
+    color: gray;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.section-1 h1,h2,p{
+    margin: 0;
+    padding: 0;
+}
+.section-1 h1{
+    font-size: 4em;
+    font-weight: normal;
+}
+
+.section-1 h2{
+    font-size: 6em;
+    margin-top: 15px;
+}
+
+.section-1 p{
+    margin-top: 15px;
+    font-size: 2em;
+    width: 50%;
+    text-align: center;
+}
+
+.section-2{
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    padding-left: -90px;
+}
+
+
+
+.s2-d1{
+    background-color: gray;
+    height: 80%;
+    width: 45%;
+}
+
+.s2-d2{
+    height: 80%;
+    width: 45%;
+}
+
+.section-2 h3,h4,p{
+    color: gray;
+    margin: 0;
+    padding: 0;
+}
+
+.section-2 h3{
+    font-size: 3em;
+    font-weight: normal;
+}
+.section-2 h4{
+    font-size: 3.5em;
+    color: gray;
+}
+.section-2 p{
+    font-size: 24px;
+    width: 80%;
+}
+
+.s2-d2-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.section-2 button{
+    height: 65px;
+    width: 25%;
+    background-color: gray;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    transition: width 1s ease;
+}
+
+.section-2 button:hover{
+    cursor: pointer;
+    width: 30%;
+}
+
+
+  
+  .section-3 {
+    height: 90vh; /* Full viewport height */
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the dropdown */
+    justify-content: flex-start; /* Align content to start */
+    position: relative;
+    background-color: #c6c5c5;
+}
+
+.dropdown {
+    margin-bottom: 10px; /* Space between dropdown and cards */
+    position: relative; /* Needed for dropdown menu positioning */
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    width: auto;
+    overflow: visible;
+    z-index: 1;
+    position: absolute;
+}
+
+.dropdown-toggle {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    height: 100px;
+    width: 600px;
+    font-size: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.arrow {
+    font-size: 36px;
+    float: right;
+    
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: auto;
+    width: 600px;
+
+
+}
+
+.dropdown-item {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 36px;
+    height: 100px;
+    max-height: 100px;
+    width: 600px;
+    text-align: center;
+    padding: 0;
+}
+
+ 
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+
+/* Card styling */
+.s3-d {
+    background-color: #888; /* Grey background for cards */
+    padding: 40px;
+    text-align: left; /* Left align text */
+    border-radius: 3px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: #fff; /* White text */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+
+.s3-d h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.s3-d p {
+    margin: 0;
+    font-size:24px;
+    color: white;
+}
+
+.s3-d1, .s3-d2, .s3-d3{
+    width: 250px;
+    height: 330px;
+}
+
+.s3-d6{
+    width: 250px;
+    height: 250px;
+
+}
+.s3-d5{
+    height: 250px;
+    width: 475px;
+
+}
+.s3-d1{
+
+    position: absolute;
+    left: 15%;
+}
+.s3-d2{
+
+    position: absolute;
+    bottom: 20%;
+    right: 45%;
+}
+
+.s3-d3{
+
+    position: absolute;
+    right: 15%;
+
+}
+.s3-d5{
+
+    position: absolute;
+    bottom: 10%;
+    right: 13%;
+
+}
+.s3-d6{
+
+    position: absolute;
+    bottom: 10%;
+    left: 12%;
+}
+
+.section-4{
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    background-color: #f1f1f1;
+}
+.section-4 h1{
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    margin-top: -20px;
+}
+.section-4 p{
+    color: white;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+
+}
+
+.s4-d{
+    height: auto;
+    width: 20%;
+    background-color: gray;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-content: flex-start;
+    margin-top: 100px;
+}
+
+
+.s4-button{
+    height: 65px;
+    width: 50%;
+    border-radius: 15px;
+    background-color: white;
+    color: gray;
+    border: none;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: width 1s ease;
+    bottom: 1;
+}
+
+.s4-button:hover{
+    cursor: pointer;
+    width: 60%;
+}
+
+.b1{
+    margin-top: 150px;
+}
+
+.b3{
+    margin-top: 280px;
+}
+
+.section-5{
+    height: 100vh;
+    width: 100%;
+    background-color: #f1f1f1;
+    position: relative;
+    z-index: -10;
+    padding-top: 50px;
+    padding-left: 100px;
+    
+
+}
+.s6-background{
+    background-color: rgb(158, 157, 157);
+    width: 70%;
+    height: 73.5%;
+    position: absolute;
+    right: 15%;
+    top: 130px;
+    z-index: -1;
+
+}
+
+.s6-d{
+    height: 30vh;
+    width: 35vh;
+    z-index: 1;
+
+}
+
+.s6-d1, .s6-d3, .s6-d5{
+    background-color: gray;
+}
+
+.s6-d2, .s6-d4, .s6-d6{
+    background-color: white;
+}
+
+.s6-d2{
+    margin-top: -8%;
+    margin-left: 15%;
+}
+.s6-d3{
+    margin-top: -8%;
+    margin-left: 30%;
+
+}
+.s6-d4{
+    margin-top: -8%;
+    margin-left: 45%;
+
+}
+.s6-d5{
+    margin-top: -8%;
+    margin-left: 60%;
+
+}
+.s6-d6{
+    margin-top: -8%;
+    margin-left: 75%;
+
+}
