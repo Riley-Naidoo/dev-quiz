@@ -50,15 +50,15 @@ nav{
     align-items: center;
     transition: 1.5s ease;
     
-    position: fixed;  /* Makes the header fixed relative to the viewport */
+    position: fixed;  
 
-    width: 100%;  /* Make it span the full width */
-    z-index: 1000;  /* Ensure it stays above other content */
+    width: 100%;  
+    z-index: 1000; 
 }
 
 nav:hover > p.logo {
-    cursor: pointer; /* Changes cursor to pointer on hover */
-    color: black; /* Changes text color on hover */
+    cursor: pointer; 
+    color: black; 
 }
 nav:hover{
     background-color: white;
@@ -115,10 +115,15 @@ nav:hover > .ham-menu span{
 }
 
 .header-list {
-    list-style-type: none; /* Removes the bullets */
-    padding: 0; /* Optional: Removes left padding */
-    margin: 0; /* Optional: Removes top and bottom margin */
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
     text-align: left;
+}
+
+.header-list a{
+    color: black;
+    text-decoration: none;
 }
 
 .header-list:hover{
@@ -233,19 +238,19 @@ nav:hover > .ham-menu span{
 
   
   .section-3 {
-    height: 90vh; /* Full viewport height */
+    height: 90vh;
     padding: 30px 0;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the dropdown */
-    justify-content: flex-start; /* Align content to start */
+    align-items: center; 
+    justify-content: flex-start; 
     position: relative;
     background-color: #c6c5c5;
 }
 
 .dropdown {
-    margin-bottom: 10px; /* Space between dropdown and cards */
-    position: relative; /* Needed for dropdown menu positioning */
+    margin-bottom: 10px; 
+    position: relative; 
     display: flex;
     justify-content: center;
     background-color: black;
@@ -316,14 +321,13 @@ nav:hover > .ham-menu span{
 }
 
 
-/* Card styling */
 .s3-d {
-    background-color: #888; /* Grey background for cards */
+    background-color: #888; 
     padding: 40px;
-    text-align: left; /* Left align text */
-    border-radius: 3px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    color: #fff; /* White text */
+    text-align: left; 
+    border-radius: 3px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
