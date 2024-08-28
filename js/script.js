@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
       dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
   
-    // Close the dropdown if clicked outside
+
     document.addEventListener('click', function (e) {
       if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
         dropdownMenu.style.display = 'none';
